@@ -1,0 +1,100 @@
+CREATE TABLE `vehicles` (
+  `Color` varchar(45) NOT NULL,
+  `idVehicle` int NOT NULL AUTO_INCREMENT,
+  `Category` enum('car','motorcycles','bicycle','scooter') NOT NULL,
+  `Cost` int unsigned NOT NULL,
+  `Driver` varchar(45) DEFAULT NULL,
+  `Availability` int unsigned NOT NULL DEFAULT '1',
+  `HasInsurance` tinyint(1) NOT NULL DEFAULT '0',
+  `Damaged` tinyint(1) NOT NULL DEFAULT '0',
+  `InsuranceCost` int unsigned NOT NULL DEFAULT '20',
+  `DaysToFix` int unsigned NOT NULL DEFAULT '0',
+ `RentCounter` int unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idVehicle`),
+  UNIQUE KEY `Αναγνωριστικο Οχηματος_UNIQUE` (`idVehicle`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `bicycles` (
+  `idBicycles` int unsigned NOT NULL AUTO_INCREMENT,
+  `idVehicle` int NOT NULL,
+  `Name` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`idBicycles`),
+  UNIQUE KEY `idBicycles_UNIQUE` (`idBicycles`),
+  KEY `idVehicle` (`idVehicle`),
+  CONSTRAINT `idVehicle` FOREIGN KEY (`idVehicle`) REFERENCES `vehicles` (`idVehicle`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `cars` (
+  `idCar` int unsigned NOT NULL AUTO_INCREMENT,
+  `idVehicle` int NOT NULL,
+  `Capacity` int NOT NULL,
+  `CarType` varchar(45) NOT NULL,
+  `RestritationNumber` varchar(45) NOT NULL,
+  `Brand` varchar(45) NOT NULL,
+  `Model` varchar(45) NOT NULL,
+  `Kilometers` int unsigned NOT NULL,
+  PRIMARY KEY (`idCar`),
+  UNIQUE KEY `Αναγνωριστικο Αμαξιου_UNIQUE` (`idCar`),
+  UNIQUE KEY `RestritationNumber_UNIQUE` (`RestritationNumber`),
+  KEY `c_idVehicle` (`idVehicle`),
+  CONSTRAINT `c_idVehicle` FOREIGN KEY (`idVehicle`) REFERENCES `vehicles` (`idVehicle`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `scooter` (
+  `idScooter` int NOT NULL AUTO_INCREMENT,
+  `idVehicle` int DEFAULT NULL,
+  `Name` varchar(40) DEFAULT NULL,
+  `Kilometers` int unsigned NOT NULL,
+  PRIMARY KEY (`idScooter`),
+  UNIQUE KEY `idScooter_UNIQUE` (`idScooter`),
+  KEY `s_idVehicle` (`idVehicle`),
+  CONSTRAINT `s_idVehicle` FOREIGN KEY (`idVehicle`) REFERENCES `vehicles` (`idVehicle`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `motorcycles` (
+  `idMotorcycles` int unsigned NOT NULL AUTO_INCREMENT,
+  `idVehicle` int NOT NULL,
+  `RestritationNumber` varchar(45) NOT NULL,
+  `MotoType` varchar(45) NOT NULL,
+  `Model` varchar(45) NOT NULL,
+  `Brand` varchar(45) NOT NULL,
+  `Kilometers` int unsigned NOT NULL,
+  PRIMARY KEY (`idMotorcycles`),
+  UNIQUE KEY `idMotorcycles_UNIQUE` (`idMotorcycles`),
+  UNIQUE KEY `RestritationNumber_UNIQUE` (`RestritationNumber`),
+  KEY `m_idVehicle` (`idVehicle`),
+  CONSTRAINT `m_idVehicle` FOREIGN KEY (`idVehicle`) REFERENCES `vehicles` (`idVehicle`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `customer` (
+  `idCustomer` int unsigned NOT NULL AUTO_INCREMENT,
+  `NameLastName` varchar(45) NOT NULL,
+  `Address` varchar(45) NOT NULL,
+  `CardNumber` varchar(45) NOT NULL,
+  `BirthDate` varchar(45) NOT NULL,
+  `LicenceNumber` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `UserName` varchar(45) NOT NULL,
+  PRIMARY KEY (`idCustomer`),
+  UNIQUE KEY `idCustomer_UNIQUE` (`idCustomer`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `rentals` (
+  `idRental` int NOT NULL AUTO_INCREMENT,
+  `NameCustomer` varchar(45) NOT NULL,
+  `Date` date NOT NULL,
+  `Price` int unsigned NOT NULL,
+  `idVehicle` int NOT NULL,
+  `idCustomer` int unsigned NOT NULL,
+  `Duration` varchar(100) NOT NULL,
+  `hour` varchar(5) DEFAULT NULL,
+  `RentalDuration` int DEFAULT 0,
+  PRIMARY KEY (`idRental`),
+  UNIQUE KEY `idRental_UNIQUE` (`idRental`),
+  KEY `idCustomer_idx` (`idCustomer`),
+  KEY `r_idVehicle` (`idVehicle`),
+  CONSTRAINT `r_idCustomer` FOREIGN KEY (`idCustomer`) REFERENCES `customer` (`idCustomer`),
+  CONSTRAINT `r_idVehicle` FOREIGN KEY (`idVehicle`) REFERENCES `vehicles` (`idVehicle`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+

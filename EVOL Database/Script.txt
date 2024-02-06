@@ -1,0 +1,78 @@
+INSERT INTO `vehicles` VALUES 
+('Red',1,'car',10000,NULL,1,0,0,1000,0,0),
+('Blue',2,'car',15000,NULL,1,0,0,1000,0,0),
+('Green',3,'car',12000,NULL,1,0,0,1000,0,0),
+('Yellow',4,'car',13000,NULL,1,0,0,1000,0,0),
+('Black',5,'car',14000,NULL,1,0,0,1000,0,0),
+('White',6,'car',16000,NULL,1,0,0,1000,0,0),
+('Gray',7,'car',11000,NULL,1,0,0,1000,0,0),
+('Silver',8,'car',17000,NULL,1,0,0,1000,0,0),
+('Maroon',9,'car',18000,NULL,1,0,0,1000,0,0),
+('Orange',10,'car',19000,NULL,1,0,0,1000,0,0),
+('Black',11,'motorcycles',8000,NULL,1,0,0,500,0,0),
+('Red',12,'motorcycles',7500,NULL,1,0,0,500,0,0),
+('Blue',13,'motorcycles',9000,NULL,1,0,0,500,0,0),
+('Green',14,'motorcycles',8500,NULL,1,0,0,500,0,0),
+('Yellow',15,'motorcycles',9500,NULL,1,0,0,500,0,0),
+('Black',16,'motorcycles',10000,NULL,1,0,0,500,0,0),
+('White',17,'motorcycles',10500,NULL,1,0,0,500,0,0),
+('Silver',18,'motorcycles',11000,NULL,1,0,0,500,0,0),
+('Gray',19,'motorcycles',12000,NULL,1,0,0,500,0,0),
+('Orange',20,'motorcycles',13000,NULL,1,0,0,500,0,0),
+('Orange',21,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',22,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',23,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',24,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',25,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',26,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',27,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',28,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',29,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',30,'scooter',13000,NULL,1,0,0,50,0,0),
+('Orange',31,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',32,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',33,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',34,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',35,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',36,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',37,'bicycle',13000,NULL,1,0,0,100,0,0),
+('Orange',38,'bicycle',13000,NULL,1,0,0,100,0,0);
+
+
+INSERT INTO `cars` VALUES 
+(21,1,5,'Sedan','CAR1001','Toyota','Corolla',25000),
+(22,2,5,'SUV','CAR1002','Ford','Explorer',30000),
+(23,3,4,'Coupe','CAR1003','Chevrolet','Camaro',20000),
+(24,4,5,'Sedan','CAR1004','Honda','Accord',22000),
+(25,5,5,'SUV','CAR1005','Jeep','Cherokee',32000),
+(26,6,2,'Convertible','CAR1006','Mazda','MX-5 Miata',12000),
+(27,7,5,'Sedan','CAR1007','Tesla','Model S',5000),
+(28,8,5,'Hatchback','CAR1008','Volkswagen','Golf',15000),
+(29,9,4,'Sports','CAR1009','BMW','3 Series',28000),
+(30,10,5,'Sedan','CAR1010','Mercedes','C-Class',18000);
+
+
+
+INSERT INTO `motorcycles` VALUES 
+(41,11,'MTR1001','Sport Bike','Ninja','Kawasaki',5000),
+(42,12,'MTR1002','Cruiser','CBR','Honda',3000),
+(43,13,'MTR1003','Touring Bike','GSX-R1000','Suzuki',4000),
+(44,14,'MTR1004','Sport Bike','YZF-R1','Yamaha',3500),
+(45,15,'MTR1005','Dual-Sport','Monster','Ducati',2500),
+(46,16,'MTR1006','Touring Bike','Triple','Triumph',4500),
+(47,17,'MTR1007','Cruiser','Dragster','MV Agusta',1500),
+(48,18,'MTR1008','Dual-Sport','RC390','KTM',5000);
+
+INSERT INTO `bicycles`  VALUES 
+  (10,34,'Bicycle1'),
+  (11,35,'Bicycle2'),
+  (12,36,'Bicycle3'),
+  (24,37,'Bicycle4'),
+  (25,38 ,'Bicycle5');
+
+INSERT INTO `scooter` VALUES 
+  (10,21,'Scooter1', 1000),
+  (11,22,'Scooter2', 1200),
+  (12,23,'Scooter3', 800),
+  (13,24,'Scooter4', 1500),
+  (14,26,'Scooter5', 2000);
